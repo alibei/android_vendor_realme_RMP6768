@@ -8,6 +8,7 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_COPY_FILES += \
     vendor/realme/RMP6768/proprietary/system/etc/init/init.vtservice.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.vtservice.rc \
     vendor/realme/RMP6768/proprietary/system/etc/init/kpoc_charger.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/kpoc_charger.rc \
+    vendor/realme/RMP6768/proprietary/system_ext/etc/permissions/com.dolby.daxservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.dolby.daxservice.xml \
     vendor/realme/RMP6768/proprietary/vendor/app/mcRegistry/020b0000000000000000000000000000.drbin:$(TARGET_COPY_OUT_VENDOR)/app/mcRegistry/020b0000000000000000000000000000.drbin \
     vendor/realme/RMP6768/proprietary/vendor/app/mcRegistry/020b0000000000000000000000000000.tlbin:$(TARGET_COPY_OUT_VENDOR)/app/mcRegistry/020b0000000000000000000000000000.tlbin \
     vendor/realme/RMP6768/proprietary/vendor/app/mcRegistry/020f0000000000000000000000000000.drbin:$(TARGET_COPY_OUT_VENDOR)/app/mcRegistry/020f0000000000000000000000000000.drbin \
@@ -365,6 +366,7 @@ PRODUCT_COPY_FILES += \
     vendor/realme/RMP6768/proprietary/vendor/etc/aurisys_param/Speech_AudioParam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/aurisys_param/Speech_AudioParam.xml \
     vendor/realme/RMP6768/proprietary/vendor/etc/aw88194a/smartpa_range:$(TARGET_COPY_OUT_VENDOR)/etc/aw88194a/smartpa_range \
     vendor/realme/RMP6768/proprietary/vendor/etc/aw88394/smartpa_range:$(TARGET_COPY_OUT_VENDOR)/etc/aw88394/smartpa_range \
+    vendor/realme/RMP6768/proprietary/vendor/etc/dolby/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml \
     vendor/realme/RMP6768/proprietary/vendor/etc/ecc_list.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list.xml \
     vendor/realme/RMP6768/proprietary/vendor/etc/ecc_list_OP01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP01.xml \
     vendor/realme/RMP6768/proprietary/vendor/etc/ecc_list_OP02.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP02.xml \
@@ -433,6 +435,7 @@ PRODUCT_COPY_FILES += \
     vendor/realme/RMP6768/proprietary/vendor/etc/init/nvram_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/nvram_daemon.rc \
     vendor/realme/RMP6768/proprietary/vendor/etc/init/tee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/tee.rc \
     vendor/realme/RMP6768/proprietary/vendor/etc/init/trustonic.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/trustonic.rc \
+    vendor/realme/RMP6768/proprietary/vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.hardware.dms@2.0-service.rc \
     vendor/realme/RMP6768/proprietary/vendor/etc/init/vendor.mediatek.hardware.dfps@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.dfps@1.0-service.rc \
     vendor/realme/RMP6768/proprietary/vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc \
     vendor/realme/RMP6768/proprietary/vendor/etc/init/vendor.mediatek.hardware.keyinstall@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.keyinstall@1.0-service.rc \
@@ -817,6 +820,9 @@ PRODUCT_PACKAGES += \
     libspeech_enh_lib \
     libspeechparser_vendor \
     libssl-mdapp \
+    libstagefright_soft_ac4dec \
+    libstagefright_soft_ddpdec \
+    libstagefrightdolby \
     libstagefrighthw \
     libsysenv \
     libthha \
@@ -831,6 +837,8 @@ PRODUCT_PACKAGES += \
     libwo \
     libwpa_client \
     libwvdrmengine \
+    libswdap \
+    vendor.dolby.hardware.dms@2.0 \
     vendor.mediatek.hardware.audio@6.1 \
     vendor.mediatek.hardware.bluetooth.audio@2.1 \
     vendor.mediatek.hardware.camera.bgservice@1.0 \
@@ -969,6 +977,7 @@ PRODUCT_PACKAGES += \
     libcameracustom.plugin \
     libcameracustom \
     libcharon-ss \
+    libdlbdsservice \
     libeffecthal.base \
     libfeature.face \
     libfeature.stereo.provider \
@@ -1062,6 +1071,7 @@ PRODUCT_PACKAGES += \
     libwifi-hal-mtk \
     libwifitest \
     libmtkcam_streaminfo_plugin-p1stt \
+    vendor.dolby.hardware.dms@2.0-impl \
     vendor.mediatek.hardware.atci@1.0 \
     vendor.mediatek.hardware.camera.atms@1.0 \
     vendor.mediatek.hardware.camera.frhandler@1.0 \
@@ -1085,6 +1095,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkradioex@2.0.system_ext \
     vendor.mediatek.hardware.videotelephony@1.0.system_ext \
     ImsService \
+    daxService \
     mediatek-common \
     mediatek-framework-net \
     mediatek-framework \
@@ -1125,6 +1136,7 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.mtk \
     camerahalserver \
     mtkfusionrild \
+    vendor.dolby.hardware.dms@2.0-service \
     vendor.mediatek.hardware.dfps@1.0-service \
     vendor.mediatek.hardware.gpu@1.0-service \
     vendor.mediatek.hardware.keyinstall@1.0-service \
